@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 版心wrapper  margin ：0 auto 版心样式  */
+html,body {
+
+  /* 宽高100%  可以写成100vh  */
+  height: 100%;
+  width: 100%;
+  /* background-color: pink; */
+  background: url(../images/login_bg.jpg) no-repeat center;
+  background-size: cover;
+
+}
+.title-box {
+  width: 1240px;
+  margin: 0 auto ;
+  margin-top: 20px;
+}
+.login-box {
+
+  width: 400px;
+  height: 320px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  /* background-color: pink; */
+  border-radius: 10px;
+
+}
+.title {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.regbox {
+  display: none;
+}
+.loginbox  .layui-input {
+  padding: 30px;
+}
+.loginbox {
+  padding: 15px;
+}

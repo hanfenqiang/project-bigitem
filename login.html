@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <!-- 导入样式 -->
+  <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+
+  <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+  <!-- logo图 -->
+  <div class="title-box"><img src="./assets/images/logo.png" alt=""></div>
+  <div class="login-box">
+    <div class="title"><img src="./assets/images/login_title.png" alt=""></div>
+
+   
+<!-- 登录页面 -->
+  <div class="loginbox">
+
+<form class="layui-form" >
+  <div class="layui-form-item">
+      <input type="text" name="title" required lay-verify="required" placeholder="请输入账号" autocomplete="off"
+        class="layui-input">
+</div>
+  <div class="layui-form-item">
+    <input type="text" name="title" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+      class="layui-input">
+  </div>
+
+  <div class="layui-form-item">
+    <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">登录</button>
+  </div>
+<div class="layui-form-item">
+  <a href="javascript:;" id="go2login">去注册账号</a>
+</div>
+</form>
+
+  </div>
+
+<!-- 注册页面 -->
+    <div class="regbox"> 
+      <a href="javascript:;" id="go2reg">去登陆账号</a>
+
+    </div>
+
+  </div>
+
+
+
+
+  <script src="./assets/lib/jquery.js"></script>
+  <script src="./assets/js/login.js"></script>
+</body>
+</html>
