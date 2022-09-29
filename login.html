@@ -20,20 +20,23 @@
 <!-- 登录页面 -->
   <div class="loginbox">
 
-<form class="layui-form" >
+<form class="layui-form"  id="formLogin">
   <div class="layui-form-item">
-      <input type="text" name="title" required lay-verify="required" placeholder="请输入账号" autocomplete="off"
-        class="layui-input">
+    <i class="layui-icon layui-icon-username"></i>
+      <input type="text" name="username" required lay-verify="required" placeholder="请输入账号" autocomplete="off"
+        class="layui-input" value="han00">
 </div>
   <div class="layui-form-item">
-    <input type="text" name="title" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
-      class="layui-input">
+      <i class="layui-icon layui-icon-password"></i>
+    <input type="password" name="password" required lay-verify="required|psd" placeholder="请输入密码" autocomplete="off"
+      class="layui-input" value="111111">
   </div>
 
   <div class="layui-form-item">
+  
     <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">登录</button>
   </div>
-<div class="layui-form-item">
+<div class="layui-form-item links" >
   <a href="javascript:;" id="go2login">去注册账号</a>
 </div>
 </form>
@@ -42,7 +45,33 @@
 
 <!-- 注册页面 -->
     <div class="regbox"> 
-      <a href="javascript:;" id="go2reg">去登陆账号</a>
+<form class="layui-form" id="formReg">
+  <div class="layui-form-item">
+    <i class="layui-icon layui-icon-username"></i>
+    <input type="text" name="username" required lay-verify="required" placeholder="请输入账号" autocomplete="off"
+      class="layui-input">
+  </div>
+  <div class="layui-form-item">
+    <i class="layui-icon layui-icon-password"></i>
+    <input type="password" name="password" required lay-verify="required|psd" placeholder="请输入密码" autocomplete="off"
+      class="layui-input">
+  </div>
+
+  <div class="layui-form-item">
+    <i class="layui-icon layui-icon-password"></i>
+    <input type="password" name="repassword" required lay-verify="required|psd|repsd" placeholder="请输入密码" autocomplete="off"
+      class="layui-input">
+  </div>
+
+  <div class="layui-form-item">
+
+    <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">注册</button>
+  </div>
+  <div class="layui-form-item links" >
+  <a href="javascript:;" id="go2reg">去登陆账号</a>
+  </div>
+</form>
+
 
     </div>
 
@@ -50,8 +79,9 @@
 
 
 
-
+  <script src="./assets/lib/layui/layui.all.js"></script>
   <script src="./assets/lib/jquery.js"></script>
+  <script src="./assets/js/baseApi.js"></script>
   <script src="./assets/js/login.js"></script>
 </body>
 </html>

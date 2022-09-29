@@ -43,8 +43,36 @@ html,body {
   display: none;
 }
 .loginbox  .layui-input {
-  padding: 30px;
+  padding:  0 30px;
 }
 .loginbox {
   padding: 15px;
+}
+
+/* 大盒子里面的文本水平垂直     text-align :center  left  right */
+/* display :flex   一般用于布局，也可以居中显示 */
+.links {
+
+  text-align: right;
+
+  
+}
+
+/* 让登录按钮居右 */
+.links a {
+  font-size: 12px;
+}
+.layui-form-item {
+  position: relative;
+}
+.layui-form-item i {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.layui-input {
+  padding-left: 30px;
+}
+.regbox {
+  padding: 0 15px;
 }
