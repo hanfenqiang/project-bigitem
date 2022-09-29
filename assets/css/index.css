@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.layui-footer {
+  text-align: center;
+
+}
+/* 这里采用的交集选择器，可以两个具有相同的类 */
+.iconfont, .layui-icon{
+  margin-right: 8px;
+}
+
+.layui-icon {
+  margin-left: 20px;
+}
