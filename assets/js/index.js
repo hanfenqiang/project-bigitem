@@ -1,4 +1,5 @@
 $(function (){
+  let layer = layui.layer
 
   // ajax 请求数据
 $.ajax({
@@ -31,13 +32,27 @@ if(res.data.user_pic) {
 
 // 添加退出的点击事件
   $('#logout').on('click',function (){
-    console.log(11)
-    if (confirm('是否确定退出')) {
-      // 确定退出后，清空token值，跳转到登录页面
-      localStorage.removeItem('token')
-      location.href='./login.html'
+    // console.log(11)
 
-    }
+
+    layer.confirm('确定退出吗?', { icon: 3, title: '提示' }, function (index) {
+      //do something   确定退出后需要执行的 清除token  跳转路径
+      location.href = './login.html'
+      localStorage.removeItem('token')
+
+      layer.close(index);
+    })
+
+
+
+
+
+    // if (confirm('是否确定退出')) {
+    //   // 确定退出后，清空token值，跳转到登录页面
+    //   localStorage.removeItem('token')
+    //   location.href='./login.html'
+
+    // }
   })
 
 
