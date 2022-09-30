@@ -24,9 +24,11 @@
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item layui-hide layui-show-md-inline-block">
           <a href="javascript:;">
-            <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
-              class="layui-nav-img">
-           个人中心
+            <div class="avatar-info">
+              <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+              <div class="text-avatar">韩</div>
+              <div class="text">欢迎 ***</div>
+            </div>
           </a>
           <dl class="layui-nav-child">
             <dd><a href="">基本信息</a></dd>
@@ -35,7 +37,7 @@
           </dl>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-          <a href="javascript:;">
+          <a href="javascript:;" id="logout">
             <i class="layui-icon layui-icon-senior"></i>
             退出
           </a>
@@ -45,9 +47,28 @@
 
     <div class="layui-side layui-bg-black">
       <div class="layui-side-scroll">
+
+        <!-- 左侧头像区域的设置 -->
+
+        <div class="avatar-info">
+          <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+          <div class="text-avatar">韩</div>
+          <div class="text">欢迎 ***</div>
+        </div>
+
+
+
+
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
-          <li class="layui-nav-item"><a href="javascript:;"><span class="iconfont icon-home"></span>首页</a></li>
+          <li class="layui-nav-item layui-this">
+
+
+            <!-- 设置跳转路径，如果不设置跳转路径，会新窗口打开 -->
+            <a href="./home/dashboard.html" target="abc" >
+            <span class="iconfont icon-home">
+
+          </span>首页</a></li>
           <li class="layui-nav-item ">
             <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
             <dl class="layui-nav-child">
@@ -70,7 +91,12 @@
 
     <div class="layui-body">
       <!-- 内容主体区域 -->
-      <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>
+
+
+
+      <!-- iframe 标签的作用，给定src 属性可以用来显示第三方链接，  http  或者  html都可以
+       name 属性  相当于给iframe  起了一个名字 -->
+      <iframe name="abc" src="./home/dashboard.html" frameborder="0"></iframe>
     </div>
 
     <div class="layui-footer">
@@ -83,6 +109,6 @@
   <script src="./assets/lib/layui/layui.all.js"></script>
   <script src="./assets/lib/jquery.js"></script>
   <script src="./assets/js/baseApi.js"></script>
-  <script src="./assets/js/login.js"></script>
+  <script src="./assets/js/index.js"></script>
 </body>
 </html>

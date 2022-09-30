@@ -102,7 +102,8 @@ $(function (){
       data: $(this).serialize(),
       success(res) {
         if (res.code !== 0) {
-          console.log(res)
+          // console.log(Array.from($(this).serialize()))
+          // console.log(res)
           return alert(res.message)
         }
         console.log(res)
@@ -125,10 +126,15 @@ $(function (){
     })
   })
 
+  // 获取用户信息失败，报错状态码 401 就是token的问题（要么没给，要么就是过期了）
+  // css权重分析   深度选择器、/deep/  >>> :deep (类名) >!important >行内样式>id选择器>>类选择器
+  // >标签选择器》通配符选择器 
 
 
 
-// token 令牌的意思，（下一次
+
+// token 令牌的意思，（下一次去请求有权限的接口时，带着）
+// 固定写法 Bearer空格字符串  Bearer  译为此票人
 
 
 
