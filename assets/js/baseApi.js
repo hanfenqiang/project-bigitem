@@ -20,9 +20,11 @@ $.ajaxPrefilter(function(config) {
     return JSON.stringify(obj)
   }
 
-
-  // 把固定的东西封装到这里
-  config.data = config.headers || render(config.data)
+    // 把固定的东西封装到这里
+    config.data = config.headers || render(config.data)
+  
+  // debugger
+    // debugger
   config.contentType = 'application/json'
   // contentType: 'application/json',
 

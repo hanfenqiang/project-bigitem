@@ -40,6 +40,9 @@ a {
   width: 40px;
   height: 40px;
   user-select: none;
+/* 这里处理一下刷新之后头像会出现两个的情况，两个头像暂时都隐藏
+，根据js获取的数据，再选择性的显示 */
+  display: none;
 }
 .text-avatar {
   width: 40px;
@@ -51,6 +54,9 @@ a {
   text-align: center;
   margin-right: 8px;
   user-select: none;
+/* 这里处理一下刷新之后头像会出现两个的情况，两个头像暂时都隐藏
+，根据js获取的数据，再选择性的显示 */
+  display: none;
   
 }
 
