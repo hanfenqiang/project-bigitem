@@ -53,6 +53,7 @@ $(function () {
       .toDataURL('image/png')       // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
 
 
+    // console.log(dataURL)
       // 发起Ajax请求
       $.ajax( {
         method:'PATCH',
@@ -61,7 +62,7 @@ $(function () {
           avatar: dataURL
         },
         success(res) {
-          console.log(res)
+          // console.log(res)
           if(res.code !==0 ) {
             return '上传图片失败'
           }

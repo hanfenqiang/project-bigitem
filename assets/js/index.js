@@ -19,9 +19,6 @@ $(function (){
     })
 
 
-
-
-
     // if (confirm('是否确定退出')) {
     //   // 确定退出后，清空token值，跳转到登录页面
     //   localStorage.removeItem('token')
@@ -29,11 +26,6 @@ $(function (){
 
     // }
   })
-
-
-
-
-
 
 
 
@@ -66,13 +58,8 @@ function renderdata() {
         let first = name[0].toUpperCase()
         $('.text-avatar').html(first).show()
         $('.text').html('欢迎 ' + name)
-
-
       }
-
     }
-
   })
-
 }
 
