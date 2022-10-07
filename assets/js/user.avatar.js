@@ -42,6 +42,37 @@ $(function () {
 
 
 
+  // 给确定按钮添加点击事件
+  $('#btnChse').on('click',function () {
+// 将图片转换为64格式的图片
+    let dataURL = $image
+      .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
+        width: 100,
+        height: 100
+      })
+      .toDataURL('image/png')       // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
+
+
+      // 发起Ajax请求
+      $.ajax( {
+        method:'PATCH',
+        url:'/my/update/avatar',
+        data:{
+          avatar: dataURL
+        },
+        success(res) {
+          console.log(res)
+          if(res.code !==0 ) {
+            return '上传图片失败'
+          }
+
+          // 请求成功后，将主页面渲染
+          window.parent.renderdata()
+        }
+      })
+  })
+
+
 
 
 

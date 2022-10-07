@@ -1,33 +1,8 @@
 $(function (){
   let layer = layui.layer
 
-  // ajax 请求数据
-$.ajax({
-  method:'GET',
-  url:'/my/userinfo',
-  // headers :{
-  //   Authorization :localStorage.getItem('token')
-  // },
-  success(res ) {
-    // console.log(res)
-    // 数据请求成功
-let name = res.data.nickname || res.data.username
-if(res.data.user_pic) {
-  $('.text-avatar').hide()
-  $('.layui-nav-img').css('src', res.data.user_pic).show()
-  $('.text').html('欢迎 ' + name)
-}else {
-  $('.layui-nav-img').hide()
-  let first = name[0].toUpperCase()
-  $('.text-avatar').html(first).show()
-  $('.text').html('欢迎 ' + name)
-
-
-  }
-
-}
-
-})
+  renderdata()
+  
 
 
 // 添加退出的点击事件
@@ -64,3 +39,40 @@ if(res.data.user_pic) {
 
   // debugger
 })
+
+
+
+
+
+function renderdata() {
+
+  // ajax 请求数据
+  $.ajax({
+    method: 'GET',
+    url: '/my/userinfo',
+    // headers :{
+    //   Authorization :localStorage.getItem('token')
+    // },
+    success(res) {
+      // console.log(res)
+      // 数据请求成功
+      let name = res.data.nickname || res.data.username
+      if (res.data.user_pic) {
+        $('.text-avatar').hide()
+        $('.layui-nav-img').attr('src', res.data.user_pic).show()
+        $('.text').html('欢迎 ' + name)
+      } else {
+        $('.layui-nav-img').hide()
+        let first = name[0].toUpperCase()
+        $('.text-avatar').html(first).show()
+        $('.text').html('欢迎 ' + name)
+
+
+      }
+
+    }
+
+  })
+
+}
+

@@ -13,8 +13,9 @@ $.ajaxPrefilter(function(config) {
     str.split('&').forEach(item => {
       // console.log(item)
       let kv = item.split('=')
+      // 这里系统自动进行了编码，需要解码为@符号
       let [k, v] = kv
-      obj[k] = v
+      obj[k] = decodeURIComponent(v)
 
     })
     return JSON.stringify(obj)
@@ -43,7 +44,7 @@ config.error = function (err){
 
     console.log(err)
     if (err.responseJSON.code == 1 && err.responseJSON.message == '身份认证失败！') {
-      // 失败后跳转到登录页面
+      // 失败后跳转到登录页面,并且清空token
       location.href = './login.html'
       localStorage.removeItem('token')
     }

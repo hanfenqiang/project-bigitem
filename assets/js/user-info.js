@@ -48,11 +48,25 @@ $(function () {
       url:'/my/userinfo',
       data: form.val('user-Form'),
       success(res) {
+        console.log(res)
+       
 
         if(res.code !==0 ) {
           return '修改用户信息失败'
         }
-        console.log(res)
+
+        // 修改信息成功，将主页面的信息更改
+        window.parent.a=10
+
+        window.parent.renderdata()  //not a function  这个函数不能放在$() 入口函数里面
+
+
+        // debugger
+
+
+
+       
+       
 
 
         
