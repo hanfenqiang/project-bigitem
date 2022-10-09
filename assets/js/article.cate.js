@@ -16,7 +16,7 @@ $(function () {
           return '获取文章分类失败'
         }
        let htmlStr= template("templateId",res)
-        $('tbody').html(htmlStr)
+        $('tbody').empty().append(htmlStr)
       }
     })
   }
@@ -43,6 +43,8 @@ $(function () {
     
 
     e.preventDefault()
+
+  // 两个逻辑使用同一个对话框， 通过设置状态，根据不同的状态进行不同的操作，
     if (status) {
       // console.log('点击修改')//修改怎么操作
       $.ajax( {
@@ -66,7 +68,7 @@ $(function () {
       $.ajax({
       method:'POST',
       url:'/my/cate/add',
-      data :$(this).serialize() ,
+        data: $(this).serialize() ,
       success(res) {
         console.log(res)
         if (res.code !==0) {
@@ -148,12 +150,14 @@ $(function () {
 
   // 删除按钮的事件
   $('tbody').on('click','.btndelete',function () {
+    // 获得兄弟的id号
     let id = $(this).siblings('.btnbutton').attr('data-id')
-    console.log(id)
+    // console.log(id)
     if (confirm('确认删除吗？')) {
       $.ajax({
         method: 'DELETE',
         url: '/my/cate/del/?id=' + id,
+        // 提示删除成功，数据没有丢失
         success(res) {
           // console.log(res)
           if (res.code !== 0) {

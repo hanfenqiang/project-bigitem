@@ -27,6 +27,7 @@ $.ajaxPrefilter(function(config) {
   // debugger
     // debugger
   config.contentType = 'application/json'
+  // config.contentType('application/json','text/html; charset=utf-8')
   // contentType: 'application/json',
 
   // 将headers属性添加到公共里面
